@@ -8,6 +8,14 @@ const listController = require("./controller/list");
 const listRouter = require("./router/listRouter")
 const dns = require("dns");
 const {MONGO_URL} = require("./config/config.js");
+const path = require("path");
+const ejsMate = require("ejs-mate");
+
+// middlwares
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.engine('ejs', ejsMate);
+app.use(express.static(path.join(__dirname, "public")));
 
 
 dns.setServers([
@@ -31,7 +39,7 @@ main().then((result)=>{
 });
 
 // routing started
-app.use("/Listings",listRouter)
+app.use("/listings",listRouter)
 
 app.get("/", (req, res)=>{
     res.send("Home is working successfully!");

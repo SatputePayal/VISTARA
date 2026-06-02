@@ -1,5 +1,6 @@
 const {Listing} = require("../models/listingModel");
 
-module.exports.get_Form = (req, res)=>{
-    res.send("listing is working")
+module.exports.get_Form = async(req, res)=>{
+const showData = await Listing.find({});
+    res.render("listing/lists.ejs", {showData});
 }

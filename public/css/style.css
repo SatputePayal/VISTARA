@@ -1,0 +1,28 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.social_media{
+    height: 8rem;
+    background-color: #ebebeb;
+}
+
+/* lists.ejs stylings */
+.card-List{
+   border: none !important;
+   margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+/* navbar.ejs logo og Airbnb */
+.airbnb{
+    color: #FF385C;
+    font-size: 2.5rem;
+}
