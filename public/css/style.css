@@ -5,15 +5,32 @@ body{
     min-height: 100vh;
 }
 
-.social_media{
-    height: 8rem;
+/* footer.ejs */
+.footer-content{
+    height: 8.5rem;
     background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.social_media{
+    font-size: 1.5rem;
+}
+.f-info-brand{
+    font-weight: bold;
+}
+
+/* navbar.ejs */
+.serch-size{
+    width: 250px !important;
 }
 
 /* lists.ejs stylings */
 .card-List{
    border: none !important;
    margin-bottom: 2rem;
+   border-radius: 2rem !important;
 }
 .card-img-top{
     border-radius: 1rem !important;
@@ -25,4 +42,21 @@ body{
 .airbnb{
     color: #FF385C;
     font-size: 2.5rem;
+}
+/* navbar.ejs -> login and signup */
+.btn-airbnb:hover{
+background-color: #F69D39;
+}
+
+/* container from bolierplate */
+.container{
+    flex: 1;
+}
+
+/* card style from lists.ejs */
+.card-size:hover{
+ transition: transform 0.3s ease;
+ transform: scale(1.05);
+ box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+ font-weight: bold;
 }
