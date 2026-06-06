@@ -1,0 +1,18 @@
+
+<%- layout("Layouts/boilerplate") %>
+
+<div class="row offset-2">
+        <div class="col-7">
+            <h3 class="mt-3 mb-3">Show Details</h3>
+        <div class="card card-List">
+            <img src="<%= showListing.image.url %>" class="card-img-top card-size" alt="Please Wait!" style="height: 17rem;">
+            <div class="card-body">
+                <p class="card-text" style="font-weight: bold;"><%= showListing.title %></p>
+                <p class="card-text"><%= showListing.description %></p>
+                <p class="card-text">&#8377; <%= Number(showListing.price).toLocaleString("en-In") %></p>
+                <p class="card-text"><%= showListing.location %></p>
+                <p class="card-text"><%= showListing.country %></p>
+            </div>
+        </div>
+    </div>
+</div>
