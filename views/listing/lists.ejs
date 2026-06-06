@@ -1,15 +1,18 @@
 <%- layout("/Layouts/boilerplate") %>
 
-<h2 class="mt-3 mb-3">All Listing</h2>
+<h3 class="mt-3 mb-3">All Listing</h3>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
 <% for(let listing of showData) { %>
-    <div class="col">
+    <a href="/listings/<%= listing._id %>">
+        <div class="col">
         <div class="card card-List card-size">
             <img src="<%= listing.image.url %>" class="card-img-top" alt="Please Wait!" style="height: 17rem;">
             <div class="card-body">
                 <p class="card-text"><%= listing.title %></p>
+                <p>&#8377; <%= Number(listing.price).toLocaleString("en-In") %></p>
             </div>
         </div>
     </div>
+    </a>
 <% } %>
 </div>
