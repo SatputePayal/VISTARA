@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 
 const express = require("express");
@@ -10,12 +11,14 @@ const dns = require("dns");
 const {MONGO_URL} = require("./config/config.js");
 const path = require("path");
 const ejsMate = require("ejs-mate");
+const ExpreeError = require("./utils/ExpressError.js");
 
 // middlwares
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({extended: true}))
 
 
 dns.setServers([
@@ -43,5 +46,16 @@ app.use("/listings",listRouter)
 
 app.get("/", (req, res)=>{
     res.send("Home is working successfully!");
+});
+
+
+
+app.all("/*splate", (req, res, next)=>{
+    next(new ExpreeError(404, "page not found"));
+});
+
+app.use((err, req, res, next)=>{
+    const {statusCode = 500, message = "something went wrong"} = err;
+    res.status(statusCode).render("listing/error.ejs", { message});
 })
 

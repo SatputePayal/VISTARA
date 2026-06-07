@@ -1,29 +1,33 @@
 
+require('dotenv').config({path:"../.env"});
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
-    require('dotenv').config({path:"../.env"})
 
 
 if(!process.env.MONGO_URL){
      throw new Error("MONGO variable IS NOT EXIST")
 }
 
+const storage = new CloudinaryStorage({
+     cloudinary,
+    params:{
+        folder: 'VistaraImage',
+        allowedFormats: ["png", "jpg", "jpeg"]
+    }
+})
+
+cloudinary.config({
+
+    cloud_name:process.env.CLOUD_NAME,
+    api_key:process.env.CLOUD_API_KEY,
+    api_secret:process.env.CLOUD_API_SECRET_KEY
+})
+
+
+
 module.exports={
     MONGO_URL:process.env.MONGO_URL,
+    storage,
+    cloudinary
 }
-
-// const path = require("path");
-
-// require("dotenv").config({
-//     path: path.join(__dirname, "../.env")
-// });
-
-// console.log("MONGO_URL =", process.env.MONGO_URL);
-// console.log("All env keys:", Object.keys(process.env));
-
-// if (!process.env.MONGO_URL) {
-//     throw new Error("MONGO URL IS NOT EXIST");
-// }
-
-// module.exports = {
-//     MONGO_URL: process.env.MONGO_URL
-// };
