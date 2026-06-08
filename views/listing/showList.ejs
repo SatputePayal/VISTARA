@@ -13,6 +13,15 @@
                 <p class="card-text"><%= showListing.location %></p>
                 <p class="card-text"><%= showListing.country %></p>
             </div>
+            <div class="inline-btn">
+                <a href="/listings/<%= showListing._id %>/Edit" class="btn btn-danger">Edit</a>
+               
+                <form action="/listings/<%= showListing._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-dark ms-4">Delete</button>
+                </form>
+
+            </div>
+    
         </div>
     </div>
 </div>

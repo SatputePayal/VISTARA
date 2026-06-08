@@ -13,6 +13,14 @@ router.get("/", listController.get_Listing);
 router.get("/new", listController.get_Form);
 
 router.get("/:id", listController.showList);
+
 router.post("/", upload.single("Listing[image]"),validationListing, listController.post_Form)
+
+router.get("/:id/Edit", listController.render_Edit_Form);
+
+router.put("/:id", upload.single("Listing[image]"), validationListing, listController.update_Form);
+
+router.delete("/:id", listController.Destroy);
+
 
 module.exports = router;

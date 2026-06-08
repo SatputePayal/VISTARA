@@ -36,7 +36,7 @@ h3{
 .card-List{
    border: none !important;
    margin-bottom: 2rem;
-   border-radius: 2rem !important;
+   border-radius: 1.5rem !important;
 
 }
 .card-img-top{
@@ -66,4 +66,11 @@ background-color: #F69D39;
  transform: scale(1.05);
  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
  font-weight: bold;
+}
+
+/* showList.ejs -> Edit button */
+.inline-btn{
+   display: flex;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
 }

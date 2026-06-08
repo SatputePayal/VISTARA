@@ -35,3 +35,31 @@ module.exports.showList = async(req, res)=>{
     // console.log(showListing);
     res.render("listing/showList.ejs", {showListing});
 }
+
+module.exports.render_Edit_Form = async(req, res)=>{
+    const {id} = req.params;
+    const EditData = await Listing.findById(id)
+    res.render("listing/editList.ejs", {EditData});
+}
+
+module.exports.update_Form = async(req, res)=>{
+const {id} = req.params;
+const UpdateData = await Listing.findByIdAndUpdate(id, {...req.body.Listing }, {returnDocument: 'after'});
+console.log(UpdateData);
+let url; 
+let filename;
+if(req.file){
+    url = req.file.path;
+    filename = req.file.filename;
+    UpdateData.image = {url, filename};
+    UpdateData.save()
+}
+res.redirect(`/listings/${id}`);
+}
+
+module.exports.Destroy = async(req, res)=>{
+    const {id} = req.params;
+    const deleteData = await Listing.findByIdAndDelete(id, { ...req.body.Listing });
+    console.log(deleteData);
+    res.redirect("/listings");
+}
