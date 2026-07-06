@@ -25,7 +25,7 @@ module.exports.post_Form = async(req, res)=>{
 
     console.log(addData);
     addData.image = {url, filename};
-    addData.save()
+   await addData.save()
     res.redirect("/listings");
 }
 
@@ -52,7 +52,7 @@ if(req.file){
     url = req.file.path;
     filename = req.file.filename;
     UpdateData.image = {url, filename};
-    UpdateData.save()
+    await UpdateData.save()
 }
 res.redirect(`/listings/${id}`);
 }

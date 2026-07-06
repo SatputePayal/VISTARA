@@ -21,7 +21,7 @@ app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'));
-
+app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 dns.setServers([
     '1.1.1.1',
@@ -47,7 +47,7 @@ main().then((result)=>{
 app.use("/listings",listRouter)
 
 app.get("/", (req, res)=>{
-    res.send("Home is working successfully!");
+    res.render("listing/Auth.ejs");
 });
 
 

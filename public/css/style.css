@@ -13,23 +13,91 @@ h3{
 
 /* footer.ejs */
 .footer-content{
-    height: 8.5rem;
+    /* height: 8.5rem; */
     background-color: #ebebeb;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.social_media{
-    font-size: 1.5rem;
-}
+
+/* footer icons */
+ footer .social_media i{
+    font-size: clamp(1rem, 2vw, 1.4rem);
+ }
 .f-info-brand{
     font-weight: bold;
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+.f-info-brand:hover{
+    color: #00B4FF !important;
+}
+
+.f-info-privacy{
+    font-weight: bold;
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+.f-info-privacy:hover{
+      color: #00B4FF !important;
+}
+
+/* navbar */
+.navbar{
+    background: #050A30 !important;
+    border-bottom: 1px solid #2D325A !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25) !important;
+    padding: 10px !important;
+}
+
+/* nav-items */
+.navbar .nav-link {
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+.navbar .nav-link:hover {
+    color: #00B4FF !important;
 }
 
 /* navbar.ejs */
 .serch-size{
     width: 250px !important;
+}
+
+/* footer.ejs */
+.footer-content{
+    background: #0B0F45;
+    border-top: 1px solid #2D325A;
+    color: #C7C9D9;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25) !important;
+    padding: 35px 0 !important;
+}
+/* footer.ejs -> instagram icon */
+.instagram-icon{
+ color: #fff !important;
+transition: color 0.3s ease;
+}
+.instagram-icon:hover{
+    color: #00B4FF !important;
+}
+
+/* footer.ejs -> facebook icon */
+.facebook-icon{
+ color: #fff !important;
+transition: color 0.3s ease;
+}
+.facebook-icon:hover{
+    color: #00B4FF !important;
+}
+
+/* footer.ejs -> twitter icon */
+.twi-icon{
+ color: #fff !important;
+transition: color 0.3s ease;
+}
+.twi-icon:hover{
+    color: #00B4FF !important;
 }
 
 /* lists.ejs stylings */
@@ -68,9 +136,156 @@ background-color: #F69D39;
  font-weight: bold;
 }
 
-/* showList.ejs -> Edit button */
+/* showList.ejs*/
 .inline-btn{
    display: flex;
     margin-top: 1rem;
     margin-bottom: 0.75rem;
+}
+/* showList.ejs -> Edit Button */
+.btn-Edit{
+    background: #ffc107;
+    color: #212529;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-Edit:hover{
+    background: #E0A800;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(255,193,7,0.25);
+}
+
+.btn-Edit:focus{
+    box-shadow: 0 0 0 0.2rem rgba(255,193,7,0.2);
+}
+
+
+
+/* Delet button */
+.btn-delete{
+    background: #FF5A6E;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-delete:hover{
+    background: #E6455A;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(255,90,110,0.25);
+}
+
+.btn-delete:focus{
+    box-shadow: 0 0 0 0.2rem rgba(255,90,110,0.2);
+}
+
+/* Auth.ejs -->image */
+.Auth-image-box{
+width: 50%;
+height: 80vh;
+border-radius: 3rem;
+}
+.Auth-villa{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.Auth{
+    margin-top: 6rem;
+    margin-left: 2.5rem;
+}
+.Auth-padding{
+padding: 1.5rem 0;
+}
+
+/* Auth.ejs -> login and Sign-up button */
+
+.btn-primary-LS {
+    background: linear-gradient(135deg, #00B4FF, #8B3DFF);
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-primary-LS:hover {
+    background: linear-gradient(135deg, #19C3FF, #9C57FF);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,180,255,0.35);
+}
+
+/* input field */
+.form-control{
+    border: 1px solid #2D325A !important;
+}
+
+.form-control::placeholder{
+    color: #AAB0D3 !important;
+}
+
+.form-control:focus{
+    border-color: #00B4FF !important;
+    box-shadow: 0 0 0 0.2rem rgba(0,180,255,0.15) !important;
+    outline: none !important;
+}
+
+/* to make sign-up text at center */
+.Auth-sign-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* sign-up font color */
+.Auth .Sign-Up-color{
+    background: linear-gradient(135deg, #00B4FF, #8B3DFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+/* newList.ejs -> submit button*/
+.btn-submit-success{
+    background: #00C896;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-submit-success:hover{
+      background: #348470;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(83, 144, 144, 0.25);
+}
+.btn-submit-success:focus{
+    box-shadow: 0 0 0 0.2rem rgba(83, 144, 144, 0.25);
+}
+
+@media(max-width: 770px){
+.Auth-image-box{
+display: block;
+width: 100%;
+height: 50%;
+}
+.Auth-villa{
+margin-left: 1.3rem;
+}
 }
