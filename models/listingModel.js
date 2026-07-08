@@ -33,7 +33,7 @@ listingSchema = new Schema({
      image: {
         url: String,
         filename: String
-    },
+        },
 
     });
 

@@ -1,22 +1,27 @@
+
 require("dotenv").config();
 
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const {Listing} = require("./models/listingModel");
-const listController = require("./controller/list");
+// const listController = require("./controller/list");
 const listRouter = require("./router/listRouter")
 const dns = require("dns");
 const {MONGO_URL} = require("./config/config.js");
 const path = require("path");
 const ejsMate = require("ejs-mate");
+const ExpreeError = require("./utils/ExpressError.js");
+var methodOverride = require('method-override');
 
 // middlwares
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'));
+app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 dns.setServers([
     '1.1.1.1',
@@ -42,6 +47,17 @@ main().then((result)=>{
 app.use("/listings",listRouter)
 
 app.get("/", (req, res)=>{
-    res.send("Home is working successfully!");
+    res.render("listing/Auth.ejs");
+});
+
+
+
+app.all("/*splate", (req, res, next)=>{
+    next(new ExpreeError(404, "page not found"));
+});
+
+app.use((err, req, res, next)=>{
+    const {statusCode = 500, message = "something went wrong"} = err;
+    res.status(statusCode).render("listing/error.ejs", { message});
 })
 
