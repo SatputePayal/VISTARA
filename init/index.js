@@ -13,7 +13,6 @@ dns.setServers([
 ])
 
 async function main(){
-    console.log(MONGO_URL)
   await mongoose.connect(MONGO_URL);
 }
 main().then((result)=>{

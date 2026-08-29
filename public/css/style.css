@@ -279,13 +279,251 @@ padding: 1.5rem 0;
     box-shadow: 0 0 0 0.2rem rgba(83, 144, 144, 0.25);
 }
 
-@media(max-width: 770px){
-.Auth-image-box{
-display: block;
-width: 100%;
-height: 50%;
+/* iphone */
+@media (max-width: 770px) {
+    .Auth-image-box {
+        display: block;
+        width: 100%;
+        height: 480px;
+    }
+
+    .Auth-villa {
+        width: 100% !important;
+        height: 100% !important;
+        margin-left: 0;
+        object-fit: cover !important;
+    }
 }
-.Auth-villa{
-margin-left: 1.3rem;
+
+
+/* samsung */
+@media (max-width: 770px) {
+
+    .Auth {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+
+    .Auth-image-box {
+        width: 100%;
+        height: 450px;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .Auth-villa {
+        width: 100% !important;
+        height: 100% !important;
+        margin-left: 0 !important;
+        object-fit: cover !important;
+    }
+
+    .Auth-padding {
+        padding: 1rem 0;
+    }
 }
+
+
+
+/* ipad */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .Auth {
+        margin: 1.5rem auto;
+        padding: 0 1.5rem;
+    }
+
+    .Auth-image-box {
+        height: 500px;
+    }
+
+    .Auth-padding {
+        padding: 1rem 1.5rem;
+    }
+}
+
+
+.travel-quote {
+    width: 100%;
+    text-align: center;
+    padding: 60px 20px 70px;
+    margin-top: 20px;
+}
+
+
+/* Large quote mark */
+
+.quote-mark {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 5rem;
+    line-height: 0.7;
+    font-weight: bold;
+
+    background: linear-gradient(
+        135deg,
+        #00B4FF,
+        #8B3DFF
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    margin-bottom: 20px;
+}
+
+
+/* Main quote */
+
+.quote-text {
+    max-width: 750px;
+    margin: 0 auto;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+
+    line-height: 1.4;
+    font-style: italic;
+
+    color: #11152f;
+}
+
+
+/* Gradient words */
+
+.quote-text span {
+    background: linear-gradient(
+        135deg,
+        #00B4FF,
+        #8B3DFF
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    font-weight: 600;
+}
+
+
+/* Divider */
+
+.quote-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 30px auto 25px;
+}
+
+.quote-divider span {
+    width: 90px;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #8B3DFF
+    );
+}
+
+.quote-divider span:last-child {
+    background: linear-gradient(
+        90deg,
+        #8B3DFF,
+        transparent
+    );
+}
+
+
+/* Heart */
+
+.quote-divider i {
+    font-size: 1.3rem;
+
+    background: linear-gradient(
+        135deg,
+        #00B4FF,
+        #8B3DFF
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* Bottom text */
+
+.quote-subtext {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+
+    line-height: 1.6;
+    font-style: italic;
+
+    color: #555b75;
+}
+
+.quote-subtext span {
+    background: linear-gradient(
+        135deg,
+        #00B4FF,
+        #8B3DFF
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+
+    .travel-quote {
+        padding: 45px 15px 50px;
+        margin-top: 10px;
+    }
+
+    .quote-mark {
+        font-size: 4rem;
+    }
+
+    .quote-text {
+        font-size: 1.5rem;
+    }
+
+    .quote-divider span {
+        width: 50px;
+    }
+
+    .quote-subtext {
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================
+   IPAD
+========================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .travel-quote {
+        padding: 55px 25px 65px;
+    }
+
+    .quote-text {
+        font-size: 2.2rem;
+    }
 }

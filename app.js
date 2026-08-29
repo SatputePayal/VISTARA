@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const {Listing} = require("./models/listingModel");
 // const listController = require("./controller/list");
 const listRouter = require("./router/listRouter")
+const user = require("./router/AuthRouter.js")
 const dns = require("dns");
 const {MONGO_URL} = require("./config/config.js");
 const path = require("path");
@@ -19,6 +20,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'));
 app.use("/assets", express.static(path.join(__dirname, "assets")));
@@ -43,8 +45,12 @@ main().then((result)=>{
     console.log("mongoose is not connecting successfully!");
 });
 
-// routing started
+// user authentication router
+app.use("/user", user)
+
+// listing router
 app.use("/listings",listRouter)
+
 
 app.get("/", (req, res)=>{
     res.render("listing/Auth.ejs");
