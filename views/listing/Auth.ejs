@@ -8,23 +8,23 @@
        <div class="Auth-sign-up">
         <h2 class="mb-3 Sign-Up-color">Sign-up</h2>
        </div> 
-      <form>
+      <form action="/user/register" method="POST">
         <div class="mb-3">
             <label for="Email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="Email">
+            <input type="email" class="form-control" id="Email" name="email">
         </div>
         <div class="mb-3">
             <label class="form-check-label" for="Username">Username</label>
-            <input type="text" class="form-control" id="Username">
+            <input type="text" class="form-control" id="Username" name="username">
         </div>
         <div class="mb-3">
             <label for="Password" class="form-label">Password:</label>
-            <input type="password" class="form-control" id="Password">
+            <input type="password" class="form-control" id="Password" name="password">
         </div>
 
         <div class="d-grid gap-2 col-6 mx-auto">
         <p>I have Alredy an Account<a href="#">Login</a></p>
-        <button type="submit" class="btn btn-primary-LS">Sign-Up</button>
+        <button class="btn btn-primary-LS">Sign-Up</button>
         </div>
       </form>
     </div>

@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { url } = require("node:inspector");
 const Schema = mongoose.Schema;
 
 listingSchema = new Schema({
