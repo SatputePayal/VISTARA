@@ -28,6 +28,9 @@ cloudinary.config({
 
 module.exports={
     MONGO_URL:process.env.MONGO_URL,
+    EMAIL_USER:process.env.EMAIL_USER,
+    EMAIL_PASS:process.env.EMAIL_PASS,
+    SECRET_KEY:process.env.SECRET_KEY,
     storage,
     cloudinary
 }

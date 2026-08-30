@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Email Verification</title>
+      
+    </head>
+
+    <body style="margin:0;padding:40px;background:#edf4fb;font-family:Arial,sans-serif;">
+
+        <table align="center" cellpadding="0" cellspacing="0" width="650"
+        style="background:#ffffff;border-radius:15px;overflow:hidden;">
+
+            <tr>
+            <td align="center" style="padding:40px;">
+
+            <img src= "cid:vistara_logo"
+            width="170"
+            alt="Logo">
+
+            <h1
+            style="font-size:34px;
+            color:#1d3557;
+            margin-top:30px;">
+            Verify Your Email
+            </h1>
+
+            <p
+            style="font-size:22px;
+            color:#444;">
+            Hello 
+            {{!-- <b>{{username}}</b>, --}}
+            </p>
+
+            <p
+            style="font-size:18px;
+            line-height:30px;
+            color:#666;
+            max-width:500px;">
+            Thank you for joining us.
+            Please verify your email address by clicking the button below.
+            </p>
+
+            <a href="{{verification_link}}" 
+            style="background: linear-gradient(135deg, #00B4FF, #8B3DFF);
+                color: #FFFFFF;
+                border: none;
+                padding: 12px 28px;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.3s ease;">
+            Verify Email
+            </a>
+
+            <p
+            style="margin-top:40px;
+            color:#888;
+            font-size:14px;">
+            This link expires in 5 minutes.
+            </p>
+
+            <hr
+            style="margin:40px 0;border:none;border-top:1px solid #ddd;">
+
+            <p
+            style="font-size:13px;
+            color:#999;">
+            If you didn't create this account,
+            you can safely ignore this email.
+            </p>
+
+            </td>
+            </tr>
+
+        </table>
+
+    </body>
+
+</html>
