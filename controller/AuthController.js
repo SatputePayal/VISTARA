@@ -1,6 +1,9 @@
 const User = require("../models/userAuthrntication");
 const json = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const VerificationEmail = require("../verifyEmail/userVerify");
+const jwt = require("jsonwebtoken");
+const config = require("../config/config");
 
 const userRegister = async(req,res)=>{
 
@@ -30,13 +33,12 @@ const userRegister = async(req,res)=>{
             password: hashedPassword
         })
 
+        token = jwt.sign({id: NewUser._id}, config.SECRET_KEY, {expiresIn: '5m'})
+        await VerificationEmail(token, email);
+        NewUser.token = token
         await NewUser.save()
         console.log(NewUser)
 
-        // return res.status(201).json({
-        //     success: true,
-        //     message: `${username} registered successfully`
-        // })
         return res.redirect("/listings");
 
     } catch (error) {
