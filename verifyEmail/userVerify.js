@@ -10,10 +10,14 @@ const config = require("../config/config")
 
 const VerificationEmail = async(token, email)=>{
 
+    const verification_link =`http://localhost:8080/user/verification?token=${encodeURIComponent(token)}`;
+
     const emailTemplateSource = fs.readFileSync(path.join(__dirname, "template.hbs"), "utf-8");
 
     const template = handlebars.compile(emailTemplateSource);
-    const htmlToSend = template({token: encodeURIComponent(token)});
+    const htmlToSend = template({
+        token: encodeURIComponent(token),
+        verification_link: verification_link});
 
     const transport = nodemailer.createTransport({
         service: "gmail",
@@ -25,9 +29,10 @@ const VerificationEmail = async(token, email)=>{
         host: "smtp.gmail.com"
     })
 
+    // const verification_link = `http://localhost:8080/auth/verification?token=${encodeURIComponent(token)}`;
     // for testing purpose only
-    console.log(config.EMAIL_USER);
-    console.log(config.EMAIL_PASS);
+    // console.log(config.EMAIL_USER);
+    // console.log(config.EMAIL_PASS);
 
     // logo path
     const vistara_logo_path = path.join(__dirname, "assest/vistara_logo.png");
@@ -40,7 +45,8 @@ const VerificationEmail = async(token, email)=>{
             {
                 filename: "vistara_logo.png",
                 path: vistara_logo_path,
-                cid: "vistara_logo"
+                cid: "vistara_logo",
+                contentDisposition: "inline"
             }
         ]
     }
