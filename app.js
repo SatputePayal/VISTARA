@@ -5,7 +5,6 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const {Listing} = require("./models/listingModel");
-// const listController = require("./controller/list");
 const listRouter = require("./router/listRouter")
 const user = require("./router/AuthRouter.js")
 const dns = require("dns");

@@ -23,10 +23,6 @@ const userAuhtenticationModel = new Schema({
         type: Boolean,
         default: null
     },
-    isVerified: {
-        type: String,
-        default: null
-    },
     token: {
         type: String,
         default: null
